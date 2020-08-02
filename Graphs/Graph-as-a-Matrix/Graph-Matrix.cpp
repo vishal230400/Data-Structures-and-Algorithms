@@ -1,5 +1,6 @@
 #include<iostream>
 #include<bits/stdc++.h> 
+#include <queue> 
 using namespace std;
 
 class graph{
@@ -41,7 +42,6 @@ public:
 	{
 		adj[v1][v2]=0;
 	}
-
 };
 
 
@@ -57,7 +57,7 @@ int main()
 	int operation;
 	int v1,v2;
 	do{
-		cout<<"Operations on Graph as Matrix"<<endl<<"1.Add Edge"<<endl<<"2.Remove Edge"<<endl<<"3.BFS"<<endl<<"4.DFS"<<endl<<"5.Topological Sorting"<<endl<<"6.Dijkstra"<<endl<<"7.Bellman-Ford"<<endl<<"8.Prim"<<endl<<"9.Kruskal"<<endl<<"10.Print the graph"<<endl<<"Enter any other button to Exit (will remove all the datas)"<<endl;
+		cout<<"Operations on Graph as Matrix"<<endl<<"1.Add Edge"<<endl<<"2.Remove Edge"<<endl<<"3.Print the graph"<<endl;
 		cin>>operation;
 		switch(operation)
 		{
@@ -77,12 +77,17 @@ int main()
 					cout<<endl;
 					break;
 				}
-			case 10:
+			case 3:
 				{
 					g.printGraph();
+					break;
 				}
+			deault:
+			{
+				cout<<"Exiting"<<endl;
+			}	
 		}
-	}while(operation>=1 && operation<=10);
+	}while(operation>=1 && operation<=3);
 	
 	return 0;
 }
